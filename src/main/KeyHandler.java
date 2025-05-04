@@ -1,3 +1,11 @@
+/*
+ * Name: Sai 
+ * Date: today 
+ * Des: Key handler class the main thing for the class is that it going to manage the key press 
+ * 
+ */
+
+
 
 
 package main;
@@ -9,7 +17,7 @@ import java.awt.event.KeyListener;
 // key listener is for receving keyboard info
 public class KeyHandler implements KeyListener {
 
-    public boolean up, down, up2, down2;
+    public boolean up, down, up2, down2, exit;
 
     // we need to add all three of function if we dont do that then it wont work
     @Override
@@ -30,6 +38,8 @@ public class KeyHandler implements KeyListener {
             up2 = true;
         }if(code == KeyEvent.VK_DOWN){
             down2 = true;
+        }if (code == KeyEvent.VK_ESCAPE){
+            exit = true;
         }
     }
 
@@ -48,6 +58,8 @@ public class KeyHandler implements KeyListener {
             up2 = false;
         }if(code == KeyEvent.VK_DOWN){
             down2 = false;
+        }if(code == KeyEvent.VK_ESCAPE){
+            exit = false;
         }
     }
 }
